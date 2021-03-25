@@ -55,7 +55,7 @@ def test_json(app, client):
 def test_json_colors(app, client):
     del app
     res = client.get('/json/colors/r')
-    assert res.status_code == 203
+    assert res.status_code == 200
     expected = {"res":"red"}
     assert expected == json.loads(res.get_data(as_text=True))
     res = client.get('/json/colors/f')
